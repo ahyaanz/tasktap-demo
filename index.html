@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasktap - Local Gigs for Teens</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-sm py-4 px-6 flex justify-between items-center">
+        <div class="text-2xl font-extrabold text-orange-500 tracking-tighter">Tasktap</div>
+        <div>
+            <button class="text-gray-500 hover:text-gray-700 font-medium mr-4">Log In</button>
+            <button class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-full font-medium transition">Post a Task</button>
+        </div>
+    </nav>
+
+    <!-- Hero Header Section -->
+    <header class="bg-orange-100 py-16 px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Earn Money Helping Your Neighbors</h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">Tasktap connects teens with local residents for quick household micro-tasks. Mow lawns, walk dogs, or help with groceries—all in your local area.</p>
+        <button class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg transition">Find Tasks Near Me</button>
+    </header>
+
+    <!-- Interactive Task Board -->
+    <main class="max-w-5xl mx-auto py-12 px-6">
+        
+        <!-- Filter Buttons -->
+        <div class="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
+            <h2 class="text-2xl font-bold text-gray-900">Live Local Tasks</h2>
+            <div class="space-x-2 flex flex-wrap gap-y-2">
+                <button class="filter-btn bg-gray-800 text-white px-4 py-1 rounded-full text-sm font-medium transition" data-filter="all">All Tasks</button>
+                <button class="filter-btn bg-gray-200 text-gray-700 hover:bg-gray-300 px-4 py-1 rounded-full text-sm font-medium transition" data-filter="yard">Yard Work</button>
+                <button class="filter-btn bg-gray-200 text-gray-700 hover:bg-gray-300 px-4 py-1 rounded-full text-sm font-medium transition" data-filter="pets">Pets</button>
+                <button class="filter-btn bg-gray-200 text-gray-700 hover:bg-gray-300 px-4 py-1 rounded-full text-sm font-medium transition" data-filter="errands">Errands</button>
+            </div>
+        </div>
+
+        <!-- Task Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="task-board">
+            
+            <!-- Task 1 -->
+            <div class="task-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition" data-category="yard">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded uppercase tracking-wide">Yard Work</span>
+                    <span class="text-lg font-bold text-gray-900">€15</span>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Rake front lawn leaves</h3>
+                <p class="text-gray-500 text-sm mb-4">Need someone to rake and bag the autumn leaves in my front yard. Bags are provided.</p>
+                <div class="flex items-center text-sm text-gray-400 mb-4">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    0.5 km away (Espoo)
+                </div>
+                <button class="w-full bg-gray-50 hover:bg-orange-50 text-orange-600 font-semibold py-2 rounded-lg border border-gray-200 hover:border-orange-200 transition">Claim Task</button>
+            </div>
+
+            <!-- Task 2 -->
+            <div class="task-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition" data-category="pets">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded uppercase tracking-wide">Pets</span>
+                    <span class="text-lg font-bold text-gray-900">€10</span>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Walk golden retriever</h3>
+                <p class="text-gray-500 text-sm mb-4">Looking for a 30-minute afternoon walk for my very friendly dog, Max.</p>
+                <div class="flex items-center text-sm text-gray-400 mb-4">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    1.2 km away (Tapiola)
+                </div>
+                <button class="w-full bg-gray-50 hover:bg-orange-50 text-orange-600 font-semibold py-2 rounded-lg border border-gray-200 hover:border-orange-200 transition">Claim Task</button>
+            </div>
+
+            <!-- Task 3 -->
+            <div class="task-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition" data-category="errands">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-1 rounded uppercase tracking-wide">Errands</span>
+                    <span class="text-lg font-bold text-gray-900">€20</span>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Groceries pickup</h3>
+                <p class="text-gray-500 text-sm mb-4">Need 2 bags of groceries picked up from the local market and delivered to my door.</p>
+                <div class="flex items-center text-sm text-gray-400 mb-4">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    2.0 km away (Matinkylä)
+                </div>
+                <button class="w-full bg-gray-50 hover:bg-orange-50 text-orange-600 font-semibold py-2 rounded-lg border border-gray-200 hover:border-orange-200 transition">Claim Task</button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm mt-12">
+        <p>&copy; 2026 Tasktap. Built for the community.</p>
+    </footer>
+
+    <!-- JavaScript to make the category filters work -->
+    <script>
+        const buttons = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.task-card');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                
+                // 1. Reset all buttons to gray
+                buttons.forEach(btn => {
+                    btn.classList.remove('bg-gray-800', 'text-white');
+                    btn.classList.add('bg-gray-200', 'text-gray-700');
+                });
+                
+                // 2. Make the clicked button dark
+                button.classList.remove('bg-gray-200', 'text-gray-700');
+                button.classList.add('bg-gray-800', 'text-white');
+
+                // 3. Show/hide the relevant cards
+                const filterValue = button.getAttribute('data-filter');
+                cards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
